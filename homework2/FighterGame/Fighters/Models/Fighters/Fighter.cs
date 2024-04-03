@@ -32,14 +32,18 @@ namespace Fighters.Models.Fighters
             X = new Random().Next(0, 100);
             Y = new Random().Next(0, 100);
         }
+
         public int CalculateDamage(double critCoef)
         {
             if (critCoef < 1)
+            {
                 critCoef = 1;
+            }
             Random random = new Random();
             double randomCoef = (random.Next(1, 50) / 10 - 2.5) / 100 + 1;
             return (int)((Race.Damage + Specialization.Damage + Weapon.Damage) * randomCoef * critCoef);
         }
+
         public void TakeDamage(int damage)
         {
             CurrentHealth -= Math.Max(damage - MaxArmor, 1);
@@ -73,21 +77,16 @@ namespace Fighters.Models.Fighters
         {
             CurrentInitiative = (int)((-Speed - Math.Abs(distance - Weapon.Range)) * CurrentHealth / MaxHealth);
         }
+
         public void CalculateCoords(int xEnemy, int yEnemy)
         {
             if (X != xEnemy)
             {
-                if (X > xEnemy)
-                    X = Math.Max(X - Speed, xEnemy);
-                else
-                    X = Math.Min(X + Speed, xEnemy);
+                X = (X > xEnemy ? Math.Max(X - Speed, xEnemy) : Math.Min(X + Speed, xEnemy));
             }
             if (Y != yEnemy)
             {
-                if (Y > yEnemy)
-                    Y = Math.Max(Y - Speed, yEnemy);
-                else
-                    Y = Math.Min(Y + Speed, yEnemy);
+                Y = (Y > xEnemy ? Math.Max(Y - Speed, yEnemy) : Math.Min(Y + Speed, yEnemy));
             }
         }
     }
