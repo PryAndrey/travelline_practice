@@ -1,6 +1,6 @@
 ﻿namespace CarFactory.Models.CarFormType
 {
-    public class Automatic : ICarFormType
+    public class Sedan : ICarFormType
     {
         public string Name { get; } = "Sedan";
     }
