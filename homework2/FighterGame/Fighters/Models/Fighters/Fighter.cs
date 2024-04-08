@@ -1,7 +1,7 @@
 ﻿using Fighters.Models.Armors;
 using Fighters.Models.Races;
+using Fighters.Models.Specializations;
 using Fighters.Models.Weapons;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Fighters.Models.Fighters
 {
@@ -53,7 +53,7 @@ namespace Fighters.Models.Fighters
             }
         }
 
-        public void AimSelection(int countFighters, int myPos)
+        public void SelectionAim(int countFighters, int myPos)
         {
             if (myPos == 0)
             {

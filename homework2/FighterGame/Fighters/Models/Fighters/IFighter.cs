@@ -1,5 +1,6 @@
 ﻿using Fighters.Models.Armors;
 using Fighters.Models.Races;
+using Fighters.Models.Specializations;
 using Fighters.Models.Weapons;
 
 namespace Fighters.Models.Fighters
@@ -23,7 +24,7 @@ namespace Fighters.Models.Fighters
 
         public void TakeDamage(int damage);
         public int CalculateDamage(double critCoef);
-        public void AimSelection(int countFighters, int myPos);
+        public void SelectionAim(int countFighters, int myPos);
         public void CalculateInitiative(double distance);
         public void CalculateCoords(int x, int y);
     }

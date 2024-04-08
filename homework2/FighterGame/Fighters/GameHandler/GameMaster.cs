@@ -1,19 +1,18 @@
 ﻿using Fighters.Models.Fighters;
-using System.Diagnostics;
 
 namespace Fighters.GameHandler
 {
+    public class WarriorCountException : Exception
+    {
+        public WarriorCountException() : base() { }
+
+        public WarriorCountException(string message) : base(message) { }
+
+        public WarriorCountException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
     public class GameMaster
     {
-        public class WarriorCountException : Exception
-        {
-            public WarriorCountException() : base() { }
-
-            public WarriorCountException(string message) : base(message) { }
-
-            public WarriorCountException(string message, Exception innerException) : base(message, innerException) { }
-        }
-
         public IFighter PlayAndGetWinner(List<Fighter> fighters)
         {
             if (fighters.Count == 0)
@@ -28,10 +27,15 @@ namespace Fighters.GameHandler
             while (true)
             {
                 Console.WriteLine($"Round {round++}.");
-                CalculateAimsSelection( fighters);
-                CalculateInitiative( fighters);
-                CalculateStep( fighters);
-                FightIteration( fighters);
+
+                CalculateAimsSelection(fighters);
+
+                CalculateInitiative(fighters);
+
+                CalculateStep(fighters);
+
+                FightIteration(fighters);
+
                 if (fighters.Count == 1)
                 {
                     return fighters[0];
@@ -39,11 +43,9 @@ namespace Fighters.GameHandler
 
                 Console.WriteLine();
             }
-
-            //throw new UnreachableException();
         }
 
-        private void FightIteration( List<Fighter> fighters)
+        private void FightIteration(List<Fighter> fighters)
         {
             List<int> killedList = new List<int>();
             List<Tuple<int, int>> posList = new List<Tuple<int, int>>();
@@ -59,21 +61,29 @@ namespace Fighters.GameHandler
                 {
                     continue;
                 }
-                int damage = fighters[posList[i].Item2].CalculateDamage(fighters[posList[i].Item2].CurrentInitiative / (fighters[fighters[posList[i].Item2].CurrentAim].CurrentInitiative - 1));
+                IFighter fighter = fighters[posList[i].Item2];
+                IFighter fighterAim = fighters[fighter.CurrentAim];
+
+                int aimInitiative = fighterAim.CurrentInitiative - 1;
+                int coeffOfDifference = fighter.CurrentInitiative / aimInitiative;
+                int damage = fighter.CalculateDamage(coeffOfDifference);
+
                 bool alreadykilled = false;
-                if (fighters[fighters[posList[i].Item2].CurrentAim].CurrentHealth == 0)
+                if (fighterAim.CurrentHealth == 0)
                 {
                     alreadykilled = true;
                 }
-                fighters[fighters[posList[i].Item2].CurrentAim].TakeDamage(damage);
-                if (fighters[fighters[posList[i].Item2].CurrentAim].CurrentHealth == 0 && !alreadykilled)
+
+                fighterAim.TakeDamage(damage);
+                if (fighterAim.CurrentHealth == 0 && !alreadykilled)
                 {
-                    killedList.Add(fighters[posList[i].Item2].CurrentAim);
+                    killedList.Add(fighter.CurrentAim);
                 }
+
                 Console.WriteLine(
-                    $"Warrior {fighters[fighters[posList[i].Item2].CurrentAim].Name} get " +
-                    $"{Math.Max(damage - fighters[fighters[posList[i].Item2].CurrentAim].MaxArmor, 1)} damage from {fighters[posList[i].Item2].Name}. " +
-                    $"Remaining HP: {fighters[fighters[posList[i].Item2].CurrentAim].CurrentHealth} / {fighters[fighters[posList[i].Item2].CurrentAim].MaxHealth}");
+                    $"Warrior {fighterAim.Name} get " +
+                    $"{Math.Max(damage - fighterAim.MaxArmor, 1)} damage from {fighter.Name}. " +
+                    $"Remaining HP: {fighterAim.CurrentHealth} / {fighterAim.MaxHealth}");
             }
             killedList.Sort((k1, k2) => k2.CompareTo(k1));
             for (int i = 0; i < killedList.Count; i++)
@@ -82,11 +92,10 @@ namespace Fighters.GameHandler
             }
         }
 
-        private void CalculateStep( List<Fighter> fighters)
+        private void CalculateStep(List<Fighter> fighters)
         {
             for (int i = 0; i < fighters.Count; i++)
             {
-
                 if (fighters[i].CurrentHealth == 0)
                 {
                     continue;
@@ -97,7 +106,7 @@ namespace Fighters.GameHandler
             }
         }
 
-        private void CalculateInitiative( List<Fighter> fighters)
+        private void CalculateInitiative(List<Fighter> fighters)
         {
             for (int i = 0; i < fighters.Count; i++)
             {
@@ -114,13 +123,13 @@ namespace Fighters.GameHandler
             }
         }
 
-        private void CalculateAimsSelection( List<Fighter> fighters)
+        private void CalculateAimsSelection(List<Fighter> fighters)
         {
             for (int i = 0; i < fighters.Count; i++)
             {
                 if (fighters[i].CurrentHealth != 0)
                 {
-                    fighters[i].AimSelection(fighters.Count, i);
+                    fighters[i].SelectionAim(fighters.Count, i);
                 }
             }
         }

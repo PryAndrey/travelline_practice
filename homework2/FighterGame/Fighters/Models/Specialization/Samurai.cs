@@ -1,4 +1,4 @@
-﻿namespace Fighters.Models.Armors
+﻿namespace Fighters.Models.Specializations
 {
     public class Samurai : ISpecialization
     {
