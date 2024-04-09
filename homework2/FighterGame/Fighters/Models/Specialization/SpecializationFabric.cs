@@ -1,7 +1,6 @@
 ﻿using Fighters.GameHandler;
-using Fighters.Models.Specializations;
 
-namespace Fighters.Models.Specialization
+namespace Fighters.Models.Specializations
 {
     public class SpecializationFabric
     {

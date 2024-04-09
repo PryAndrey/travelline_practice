@@ -1,7 +1,6 @@
 ﻿using Fighters.Models.Armors;
 using Fighters.Models.Fighters;
 using Fighters.Models.Races;
-using Fighters.Models.Specialization;
 using Fighters.Models.Specializations;
 using Fighters.Models.Weapons;
 using System.Text.RegularExpressions;
