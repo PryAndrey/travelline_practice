@@ -1,8 +1,8 @@
-﻿using Fighters.Models.Armors;
+﻿using Fighters.GameHandler;
 
-namespace Fighters.GameHandler
+namespace Fighters.Models.Armors
 {
-    public class ArmorHandler
+    public class ArmorFabric
     {
         public static IArmor GetArmor(string name)
         {

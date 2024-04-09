@@ -1,10 +1,5 @@
 ﻿using Fighters.GameHandler;
-using Fighters.Models.Armors;
 using Fighters.Models.Fighters;
-using Fighters.Models.Races;
-using Fighters.Models.Specializations;
-using Fighters.Models.Weapons;
-using System.Text.RegularExpressions;
 
 namespace Fighters
 {
@@ -26,6 +21,7 @@ namespace Fighters
                 {
                     break;
                 }
+
                 try
                 {
                     registrationRoom.ProcessRegistrationBlanc(input);

@@ -2,15 +2,6 @@
 
 namespace Fighters.GameHandler
 {
-    public class WarriorCountException : Exception
-    {
-        public WarriorCountException() : base() { }
-
-        public WarriorCountException(string message) : base(message) { }
-
-        public WarriorCountException(string message, Exception innerException) : base(message, innerException) { }
-    }
-
     public class GameMaster
     {
         public IFighter PlayAndGetWinner(List<Fighter> fighters)

@@ -1,8 +1,9 @@
-﻿using Fighters.Models.Specializations;
+﻿using Fighters.GameHandler;
+using Fighters.Models.Specializations;
 
-namespace Fighters.GameHandler
+namespace Fighters.Models.Specialization
 {
-    public class SpecializationHandler
+    public class SpecializationFabric
     {
         public static ISpecialization GetSpecialization(string name)
         {

@@ -1,22 +1,13 @@
 ﻿using Fighters.Models.Armors;
 using Fighters.Models.Fighters;
 using Fighters.Models.Races;
+using Fighters.Models.Specialization;
 using Fighters.Models.Specializations;
 using Fighters.Models.Weapons;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace Fighters.GameHandler
 {
-    public class WrongInputException : Exception
-    {
-        public WrongInputException() : base() { }
-
-        public WrongInputException(string message) : base(message) { }
-
-        public WrongInputException(string message, Exception innerException) : base(message, innerException) { }
-    }
-
     public class RegistrationBattle
     {
         public List<Fighter> Fighters { get; private set; } = new List<Fighter>();
@@ -45,16 +36,16 @@ namespace Fighters.GameHandler
             }
 
             Console.WriteLine($"Input Race: 1 - Human, 2 - Dwarf, 3 - Elf, 4 - Giant, 5 - Orc");
-            IRace race = RaceHandler.GetRace(Console.ReadLine());
+            IRace race = RaceFabric.GetRace(Console.ReadLine());
 
             Console.WriteLine($"Input Class: 0 - NoClass, 1 - Knight, 2 - Mercenary, 3 - Samurai");
-            ISpecialization specialization = SpecializationHandler.GetSpecialization(Console.ReadLine());
+            ISpecialization specialization = SpecializationFabric.GetSpecialization(Console.ReadLine());
 
             Console.WriteLine($"Input Weapon: 0 - NoWeapon, 1 - Sword, 2 - Spear, 3 - Daggers, 4 - Bow");
-            IWeapon weapon = WeaponHandler.GetWeapon(Console.ReadLine());
+            IWeapon weapon = WeaponFabric.GetWeapon(Console.ReadLine());
 
             Console.WriteLine($"Input Armor: 0 - NoArmor, 1 - LightArmor, 2 - RogueArmor, 3 - HeavyArmor");
-            IArmor armor = ArmorHandler.GetArmor(Console.ReadLine());
+            IArmor armor = ArmorFabric.GetArmor(Console.ReadLine());
 
             Fighter newFighter = AddFighter(name, race, specialization, weapon, armor);
 

@@ -1,8 +1,8 @@
-﻿using Fighters.Models.Races;
+﻿using Fighters.GameHandler;
 
-namespace Fighters.GameHandler
+namespace Fighters.Models.Races
 {
-    public class RaceHandler
+    public class RaceFabric
     {
         public static IRace GetRace(string name)
         {

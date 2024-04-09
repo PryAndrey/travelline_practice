@@ -1,8 +1,8 @@
-﻿using Fighters.Models.Weapons;
+﻿using Fighters.GameHandler;
 
-namespace Fighters.GameHandler
+namespace Fighters.Models.Weapons
 {
-    public class WeaponHandler
+    public class WeaponFabric
     {
         public static IWeapon GetWeapon(string name)
         {
