@@ -55,19 +55,24 @@
     <Compile Include="CarFactoryForm.Designer.cs">
       <DependentUpon>CarFactoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CarColor\ColorDictionary.cs" />
+    <Compile Include="Models\CarColor\Red.cs" />
     <Compile Include="Models\CarColor\White.cs" />
     <Compile Include="Models\CarColor\Green.cs" />
     <Compile Include="Models\CarColor\Blue.cs" />
     <Compile Include="Models\CarColor\ICarColor.cs" />
     <Compile Include="Models\CarColor\Black.cs" />
+    <Compile Include="Models\CarEngine\EngineDictionary.cs" />
     <Compile Include="Models\CarEngine\V6Engine.cs" />
     <Compile Include="Models\CarEngine\V12Engine.cs" />
+    <Compile Include="Models\CarFormType\FormDictionary.cs" />
     <Compile Include="Models\CarFormType\Universal.cs" />
     <Compile Include="Models\CarFormType\Sedan.cs" />
     <Compile Include="Models\CarFormType\ICarFormType.cs" />
     <Compile Include="Models\CarFormType\HatchBack.cs" />
     <Compile Include="Models\CarEngine\V8Engine.cs" />
     <Compile Include="Models\CarEngine\ICarEngine.cs" />
+    <Compile Include="Models\CarTransmission\TransmissionDictionary.cs" />
     <Compile Include="Models\CarTransmission\Mechanical.cs" />
     <Compile Include="Models\CarTransmission\ICarTransmission.cs" />
     <Compile Include="Models\CarTransmission\Automatic.cs" />

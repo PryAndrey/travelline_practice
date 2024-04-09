@@ -1,7 +1,8 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.Drawing;
+﻿using CarFactory.Models.CarColor;
+using CarFactory.Models.CarEngine;
+using CarFactory.Models.CarFormType;
+using CarFactory.Models.CarTransmission;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace CarFactory
 {
@@ -82,11 +83,7 @@ namespace CarFactory
             this.carColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carColor.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.carColor.FormattingEnabled = true;
-            this.carColor.Items.AddRange(new object[] {
-            "Red",
-            "Blue",
-            "Black",
-            "White"});
+            this.carColor.Items.AddRange(ColorDictionary.GetColorsName());
             this.carColor.Location = new System.Drawing.Point(5, 65);
             this.carColor.Margin = new System.Windows.Forms.Padding(2);
             this.carColor.Name = "carColor";
@@ -111,10 +108,7 @@ namespace CarFactory
             this.carEngine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carEngine.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.carEngine.FormattingEnabled = true;
-            this.carEngine.Items.AddRange(new object[] {
-            "V6",
-            "V8",
-            "V12"});
+            this.carEngine.Items.AddRange(EngineDictionary.GetEnginesName());
             this.carEngine.Location = new System.Drawing.Point(5, 65);
             this.carEngine.Margin = new System.Windows.Forms.Padding(2);
             this.carEngine.Name = "carEngine";
@@ -139,9 +133,7 @@ namespace CarFactory
             this.carTransmission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carTransmission.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.carTransmission.FormattingEnabled = true;
-            this.carTransmission.Items.AddRange(new object[] {
-            "Automatic",
-            "Mechanical"});
+            this.carTransmission.Items.AddRange(TransmissionDictionary.GetTransmissionsName());
             this.carTransmission.Location = new System.Drawing.Point(5, 65);
             this.carTransmission.Margin = new System.Windows.Forms.Padding(2);
             this.carTransmission.Name = "carTransmission";
@@ -166,10 +158,7 @@ namespace CarFactory
             this.carFormType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carFormType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.carFormType.FormattingEnabled = true;
-            this.carFormType.Items.AddRange(new object[] {
-            "HatchBack",
-            "Sedan",
-            "Universal"});
+            this.carFormType.Items.AddRange(FormDictionary.GetFormsName());
             this.carFormType.Location = new System.Drawing.Point(5, 65);
             this.carFormType.Name = "carFormType";
             this.carFormType.Size = new System.Drawing.Size(163, 36);
@@ -191,7 +180,7 @@ namespace CarFactory
             // 
             // confirmButton
             // 
-            this.confirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.confirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.confirmButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.confirmButton.Location = new System.Drawing.Point(2, 224);

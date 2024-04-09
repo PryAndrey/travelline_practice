@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System;
-using System.Collections.Generic;
 using CarFactory.Models.CarFormType;
 using CarFactory.Models.CarColor;
 using CarFactory.Models.CarEngine;
@@ -50,34 +49,6 @@ namespace CarFactory
                 $"Transmission: {car.Transmission.Name}";
         }
 
-        public Dictionary<string, ICarFormType> CarForm = new Dictionary<string, ICarFormType>
-        {
-            {"HatchBack", new HatchBack()},
-            {"Sedan", new Sedan()},
-            {"Universal", new Universal()}
-        };
-
-        public Dictionary<string, ICarColor> CarColor = new Dictionary<string, ICarColor>
-        {
-            {"White", new White()},
-            {"Black", new Black()},
-            {"Blue", new Blue()},
-            {"Green", new Green()}
-        };
-
-        public Dictionary<string, ICarEngine> CarEngine = new Dictionary<string, ICarEngine>
-        {
-            {"V6", new V6Engine()},
-            {"V8", new V8Engine()},
-            {"V12", new V12Engine()}
-        };
-
-        public Dictionary<string, ICarTransmission> CarTransmission = new Dictionary<string, ICarTransmission>
-        {
-            {"Automatic", new Automatic()},
-            {"Mechanical", new Mechanical()}
-        };
-
         private ICar MakeConfiguration()
         {
             if (carFormType.SelectedItem == null
@@ -87,10 +58,10 @@ namespace CarFactory
             {
                 return null;
             }
-            ICarFormType formType = CarForm[carFormType.SelectedItem.ToString()];
-            ICarColor color = CarColor[carColor.SelectedItem.ToString()];
-            ICarEngine engine = CarEngine[carEngine.SelectedItem.ToString()];
-            ICarTransmission transmission = CarTransmission[carTransmission.SelectedItem.ToString()];
+            ICarFormType formType = FormDictionary.CarForm[carFormType.SelectedItem.ToString()];
+            ICarColor color = ColorDictionary.CarColor[carColor.SelectedItem.ToString()];
+            ICarEngine engine = EngineDictionary.CarEngine[carEngine.SelectedItem.ToString()];
+            ICarTransmission transmission = TransmissionDictionary.CarTransmission[carTransmission.SelectedItem.ToString()];
 
             return new Car(engine, formType, color, transmission);
         }

@@ -1,5 +1,4 @@
-﻿
-namespace CarFactory.Models.CarColor
+﻿namespace CarFactory.Models.CarColor
 {
     public class Green : ICarColor
     {
