@@ -58,10 +58,11 @@ namespace CarFactory
             {
                 return null;
             }
-            ICarFormType formType = FormDictionary.CarForm[carFormType.SelectedItem.ToString()];
-            ICarColor color = ColorDictionary.CarColor[carColor.SelectedItem.ToString()];
-            ICarEngine engine = EngineDictionary.CarEngine[carEngine.SelectedItem.ToString()];
-            ICarTransmission transmission = TransmissionDictionary.CarTransmission[carTransmission.SelectedItem.ToString()];
+
+            ICarFormType formType = CarFormsDictionary.CarFormByNameForm[carFormType.SelectedItem.ToString()];
+            ICarColor color = CarColorsDictionary.CarColorByNameColor[carColor.SelectedItem.ToString()];
+            ICarEngine engine = CarEnginesDictionary.CarEngineByNameEngine[carEngine.SelectedItem.ToString()];
+            ICarTransmission transmission = CarTransmissionsDictionary.CarTransmissionByNameTransmission[carTransmission.SelectedItem.ToString()];
 
             return new Car(engine, formType, color, transmission);
         }

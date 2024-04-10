@@ -3,18 +3,18 @@ using System.Linq;
 
 namespace CarFactory.Models.CarFormType
 {
-    public class FormDictionary
+    public class CarFormsDictionary 
     {
-        public static Dictionary<string, ICarFormType> CarForm = new Dictionary<string, ICarFormType>
+        public static Dictionary<string, ICarFormType> CarFormByNameForm = new Dictionary<string, ICarFormType>
         {
             {"HatchBack", new HatchBack()},
             {"Sedan", new Sedan()},
             {"Universal", new Universal()}
         };
 
-        public static string[] GetFormsName()
+        public static string[] GetFormsNames()
         {
-            return CarForm.Keys.ToArray();
+            return CarFormByNameForm.Keys.ToArray();
         }
     }
 }

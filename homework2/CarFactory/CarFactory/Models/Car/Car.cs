@@ -15,7 +15,8 @@ namespace CarFactory.Models.Car
 
         public ICarTransmission Transmission { get; }
 
-        public Car(ICarEngine engine,
+        public Car(
+            ICarEngine engine,
             ICarFormType formType,
             ICarColor color,
             ICarTransmission transmission)

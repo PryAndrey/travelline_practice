@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace CarFactory.Models.CarColor
 {
-    public class ColorDictionary
+    public class CarColorsDictionary 
     {
-        public static Dictionary<string, ICarColor> CarColor = new Dictionary<string, ICarColor>
+        public static Dictionary<string, ICarColor> CarColorByNameColor = new Dictionary<string, ICarColor>
         {
             {"White", new White()},
             {"Black", new Black()},
@@ -14,9 +14,9 @@ namespace CarFactory.Models.CarColor
             {"Green", new Green()}
         };
 
-        public static string[] GetColorsName()
+        public static string[] GetColorsNames()
         {
-            return CarColor.Keys.ToArray();
+            return CarColorByNameColor.Keys.ToArray();
         }
     }
 }
