@@ -64,11 +64,11 @@ public static class AccommodationsProcessor
                 //Check in and out dates
                 if (!DateTime.TryParse(parts[3], CultureInfo.InvariantCulture, out DateTime bookStartDate))
                 {
-                    throw new ArgumentException("Invalid in date");
+                    throw new ArgumentException("Invalid in date. Input in format M/D/Y: '01/01/2024'");
                 }
                 if (!DateTime.TryParse(parts[4], CultureInfo.InvariantCulture, out DateTime bookEndDate))
                 {
-                    throw new ArgumentException("Invalid out date");
+                    throw new ArgumentException("Invalid out date. Input in format M/D/Y: '01/01/2024'");
                 }
 
                 BookingDto bookingDto = new()
@@ -105,13 +105,13 @@ public static class AccommodationsProcessor
                 break;
 
             case "undo":
-                //check empty history stack
+                //Check empty history stack
                 if (s_commandIndex == 0)
                 {
                     Console.WriteLine("There's nothing to undo.");
                     return;
                 }
-                // if undo create booking which was cancel then returned exception.
+                // If undo create booking which was cancel then returned exception.
                 // And next undo of history is broken.
                 try
                 {
@@ -150,11 +150,11 @@ public static class AccommodationsProcessor
                 //Check in and out dates
                 if (!DateTime.TryParse(parts[1], CultureInfo.InvariantCulture, out DateTime searchingStartDate))
                 {
-                    throw new ArgumentException("Incorrect in date");
+                    throw new ArgumentException("Incorrect in date. Input in format M/D/Y: '01/01/2024'");
                 }
                 if (!DateTime.TryParse(parts[2], CultureInfo.InvariantCulture, out DateTime searchingEndDate))
                 {
-                    throw new ArgumentException("Incorrect out date");
+                    throw new ArgumentException("Incorrect out date. Input in format M/D/Y: '01/01/2024'");
                 }
                 string categoryName = parts[3];
                 SearchBookingsCommand searchCommand = new(_bookingService, searchingStartDate, searchingEndDate, categoryName);

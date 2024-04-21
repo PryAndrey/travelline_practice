@@ -24,7 +24,7 @@ public class BookingService : IBookingService
 
     public Booking Book(int userId, string categoryName, DateTime startDate, DateTime endDate, Currency currency)
     {
-        //check equal of in and out dates
+        //Check equal of in and out dates
         if (endDate == startDate)
         {
             throw new ArgumentException("End date cannot be equal start date");
@@ -80,12 +80,12 @@ public class BookingService : IBookingService
         {
             throw new ArgumentException($"Booking with id: '{bookingId}' does not exist");
         }
-        //check by date, not date+Hour+Min+Second
+        //Check by date, not date+Hour+Min+Second
         if (booking.StartDate.Date < DateTime.Today)
         {
             throw new ArgumentException("Start date cannot be earlier than now date");
         }
-        //round result
+        //Round result
         Console.WriteLine($"Refund of {Math.Round(booking.Cost, 2)} {booking.Currency}");
         _bookings.Remove(booking);
         RoomCategory? category = _categories.FirstOrDefault(c => c.Name == booking.RoomCategory.Name);
@@ -108,7 +108,7 @@ public class BookingService : IBookingService
 
         query = query.Where(b => b.StartDate >= startDate);
 
-        //the last day was not counted
+        //The last day was not counted
         query = query.Where(b => b.EndDate <= endDate);
 
         if (!string.IsNullOrEmpty(categoryName))
@@ -127,7 +127,7 @@ public class BookingService : IBookingService
         }
         //Was calculated as though already use booking
         int daysBeforeArrival = (booking.StartDate - DateTime.Today).Days;
-        //if cancel in start day then return penalty = base penalty + cost of first day
+        //If cancel in start day then return penalty = base penalty + cost of first day
         return daysBeforeArrival == 0 ?
             5000.0m + Math.Round(booking.Cost / (booking.EndDate - booking.StartDate).Days, 2) :
             Math.Round(5000.0m / daysBeforeArrival, 2);
@@ -149,8 +149,8 @@ public class BookingService : IBookingService
 
     private static decimal CalculateBookingCost(decimal baseRate, int days, int userId, decimal currencyRate)
     {
-        //it was multiplied by the currencyRate, but it should be divided.
-        //it is better to return the currency for which you ordered
+        //It was multiplied by the currencyRate, but it should be divided.
+        //It is better to return the currency for which you ordered
         decimal cost = (baseRate / currencyRate) * days;
         decimal totalCost = cost - cost * CalculateDiscount(userId);
         return totalCost;
