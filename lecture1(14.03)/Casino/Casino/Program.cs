@@ -5,14 +5,15 @@ namespace Casino
 {
     internal class Program
     {
+        const double EPS = 0.009;
         static void Main(string[] args)
         {
             const double MULTIPLICATOR = 0.2;
             Random random = new Random();
             double balance = 10000;
-            while (balance > 0)
+            while (balance > EPS)
             {
-                Console.WriteLine("Your balanse " + balance);
+                Console.WriteLine("Your balanse " + Math.Round(balance, 2));
                 Console.WriteLine($"Input your bet or '!' to exit from casino with {balance} money");
                 string betStr = Console.ReadLine();
 

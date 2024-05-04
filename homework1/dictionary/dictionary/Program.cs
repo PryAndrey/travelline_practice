@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace dictionary
+namespace Dictionary
 {
     internal class Program
     {
@@ -60,15 +60,15 @@ namespace dictionary
             }
         }
 
-        static void WritingToFile(Dictionary<string, List<string>> dictionary, string filePath)
+        static void WriteToFile(Dictionary<string, List<string>> dictionary, string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                foreach (var pair in dictionary)
+                foreach (KeyValuePair<string, List<string>> pair in dictionary)
                 {
                     if (Regex.IsMatch(pair.Key, @"^[a-zA-Z\s]+$"))
                     {
-                        foreach (var tranlation in pair.Value)
+                        foreach (string tranlation in pair.Value)
                         {
                             writer.WriteLine($"{pair.Key} : {tranlation}");
                         }
@@ -122,7 +122,7 @@ namespace dictionary
                 {
                     List<string> listRemovingWords = dictionary[delWord];
                     dictionary.Remove(delWord);
-                    foreach (var translation in listRemovingWords)
+                    foreach (string translation in listRemovingWords)
                     {
                         if (dictionary[translation].Count == 1)
                         {
@@ -152,7 +152,6 @@ namespace dictionary
             int spaceIndex = input.IndexOf(' ');
             if (spaceIndex != -1)
             {
-
                 string[] inputWords = input.Substring(spaceIndex + 1).Split(':');
                 if (inputWords.Count() != 2)
                 {
@@ -165,7 +164,7 @@ namespace dictionary
                     List<string> list = dictionary[changeWord];
                     dictionary.Remove(changeWord);
                     dictionary[newWord] = list;
-                    foreach (var translation in list)
+                    foreach (string translation in list)
                     {
                         for (int i = 0; i < dictionary[translation].Count; i++)
                         {
@@ -224,7 +223,7 @@ namespace dictionary
                     AddTranslation(dictionary, input, tranlation);
                 }
             }
-            WritingToFile(dictionary, filePath);
+            WriteToFile(dictionary, filePath);
             Console.WriteLine(SAVE_DICTIONARY);
         }
     }
