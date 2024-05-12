@@ -14,7 +14,7 @@ CREATE TABLE dbo.customers(
 	 first_name NVARCHAR(50) NOT NULL,
 	 last_name NVARCHAR(50) NOT NULL,
 	 email NVARCHAR(100) NOT NULL,
-     phone_number NVARCHAR(30) NOT NULL,
+     	 phone_number NVARCHAR(30) NOT NULL,
 	 CONSTRAINT PK_customers_id_customer PRIMARY KEY(customer_id)
 	)
 
@@ -24,7 +24,7 @@ CREATE TABLE dbo.bookings(
 	 customer_id INT NOT NULL,
 	 room_id INT NOT NULL,
 	 check_in_date DATE NOT NULL,
-     check_out_date DATE NOT NULL,
+     	 check_out_date DATE NOT NULL,
 	 CONSTRAINT PK_bookings_id_booking PRIMARY KEY(booking_id),
 	 CONSTRAINT FK_bookings_id_customer FOREIGN KEY (customer_id) REFERENCES dbo.customers (customer_id),
 	 CONSTRAINT FK_bookings_id_room	FOREIGN KEY (room_id) REFERENCES dbo.rooms (room_id)
@@ -51,24 +51,24 @@ CREATE TABLE dbo.room_to_facilities(
 
 INSERT INTO dbo.rooms (room_number, room_type, price_per_night, availability)
 VALUES
-    (62, N'one-room', 2000.00, 1),
-    (63, N'two-room', 3000.00, 0),
-    (64, N'three-room', 4000.00, 0),
-    (65, N'one-room', 2000.00, 0),
-    (66, N'two-room', 3000.00, 0),
-    (67, N'three-room', 4000.00, 1),
-    (68, N'one-room', 2000.00, 1),
-    (69, N'two-room', 1000.00, 1),
-    (70, N'three-room', 4000.00, 1),
-    (71, N'one-room', 4000.00, 1),
-    (72, N'two-room', 3000.00, 0),
-    (73, N'three-room', 4000.00, 0),
-    (74, N'one-room', 6000.00, 0),
-    (75, N'two-room', 7000.00, 1),
-    (76, N'three-room', 8000.00, 1),
-    (77, N'one-room', 3000.00, 0),
-    (78, N'two-room', 4000.00, 0),
-    (79, N'three-room', 5000.00, 1)
+	(62, N'one-room', 2000.00, 1),
+	(63, N'two-room', 3000.00, 0),
+	(64, N'three-room', 4000.00, 0),
+	(65, N'one-room', 2000.00, 0),
+    	(66, N'two-room', 3000.00, 0),
+    	(67, N'three-room', 4000.00, 1),
+    	(68, N'one-room', 2000.00, 1),
+    	(69, N'two-room', 1000.00, 1),
+    	(70, N'three-room', 4000.00, 1),
+    	(71, N'one-room', 4000.00, 1),
+    	(72, N'two-room', 3000.00, 0),
+    	(73, N'three-room', 4000.00, 0),
+    	(74, N'one-room', 6000.00, 0),
+    	(75, N'two-room', 7000.00, 1),
+    	(76, N'three-room', 8000.00, 1),
+	(77, N'one-room', 3000.00, 0),
+	(78, N'two-room', 4000.00, 0),	
+	(79, N'three-room', 5000.00, 1)
 
 INSERT INTO dbo.customers (first_name, last_name, email, phone_number)
 VALUES
@@ -84,15 +84,15 @@ VALUES
 
 INSERT INTO dbo.bookings (customer_id, room_id, check_in_date, check_out_date)
 VALUES
-    (1, 1, '2024-04-15', '2024-05-08'),
-    (2, 3, '2024-04-26', '2024-05-12'),
-    (3, 4, '2024-04-12', '2024-05-11'),
-    (4, 5, '2024-04-28', '2024-05-15'),
-    (5, 7, '2024-04-16', '2024-05-17'),
-    (6, 8, '2024-04-19', '2024-05-28'),
-    (7, 10,'2024-04-25', '2024-05-20'),
-    (8, 12,'2024-04-21', '2024-05-14'),
-    (9, 13,'2024-04-29', '2024-05-15')
+    	(1, 1, '2024-04-15', '2024-05-08'),
+    	(2, 3, '2024-04-26', '2024-05-12'),
+    	(3, 4, '2024-04-12', '2024-05-11'),
+    	(4, 5, '2024-04-28', '2024-05-15'),
+    	(5, 7, '2024-04-16', '2024-05-17'),
+    	(6, 8, '2024-04-19', '2024-05-28'),
+    	(7, 10,'2024-04-25', '2024-05-20'),
+    	(8, 12,'2024-04-21', '2024-05-14'),
+    	(9, 13,'2024-04-29', '2024-05-15')
 
 INSERT INTO dbo.facilities (facility_name)
 VALUES
