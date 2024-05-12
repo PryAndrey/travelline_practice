@@ -19,8 +19,8 @@ FROM bookings
          JOIN rooms ON bookings.customer_id = rooms.room_id
 WHERE rooms.room_number = 64;
 
---Находим номера не забронированные на определенную дату
---(Дата не находится в диапазоне бронирования номера)
+--We find rooms that are not booked on a certain date
+--(The date is not in the range of the room reservation)
 SELECT rooms.*
 FROM rooms
 WHERE room_id IN
