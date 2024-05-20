@@ -17,6 +17,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -52,61 +53,80 @@ textarea {
   box-sizing: border-box;
 }
 
-.route {
+.requests-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.get-all-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
   border: 1px solid #000;
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
-}
-
-.route-get {
   background: rgba(97, 175, 254, 0.1);
   border-color: #61affe;
-}
-
-.route-header {
-  padding: 5px;
-}
-
-.route-summary {
-  background-color: inherit;
-  cursor: pointer;
   width: 100%;
+}
+
+.post-block {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #e8f6f0;
+  border-color: #49cc90;
+  width: 100%;
 }
 
-.route-summary-method {
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 6px 0;
-  min-width: 80px;
-  border-radius: 3px;
+.get-by-id-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+  width: 100%;
 }
 
-.route-get .route-summary-method {
-  background-color: #61affe;
+.put-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #fbf1e6;
+  border-color: #fca130;
+  width: 100%;
 }
 
-.route-summary-path {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0 10px;
-  color: #3b4151;
+.delete-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #fae7e7;
+  border-color: #f93e3e;
+  width: 100%;
 }
 
-.route-summary-arrow {
-  flex: 1 1 auto;
-}
-
-.route-summary-arrow .arrow {
-  display: block;
-  margin-right: 0;
-  margin-left: auto;
-  transform: rotate(180deg);
+.get-by-email-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+  width: 100%;
 }
