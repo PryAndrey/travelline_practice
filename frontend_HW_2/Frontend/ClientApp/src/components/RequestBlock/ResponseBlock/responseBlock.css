@@ -1,0 +1,36 @@
+.response {
+  height: 0px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.response.open {
+  height: fit-content;
+}
+
+.response-body-block {
+  max-width: 100%;
+  padding: 2%;
+}
+
+.response h4 {
+  margin: 5px 0 0 0;
+}
+
+.response pre {
+  word-wrap: break-word;
+  background: #333;
+  border-radius: 4px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 600;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  margin: 0;
+  padding: 10px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-break: break-word;
+}

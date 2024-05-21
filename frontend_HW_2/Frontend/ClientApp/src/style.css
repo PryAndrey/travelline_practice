@@ -1,0 +1,132 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+button {
+  border-width: 0;
+  padding: 0;
+}
+
+textarea {
+  box-sizing: border-box;
+}
+
+.requests-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.get-all-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+  width: 100%;
+}
+
+.post-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #e8f6f0;
+  border-color: #49cc90;
+  width: 100%;
+}
+
+.get-by-id-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+  width: 100%;
+}
+
+.put-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #fbf1e6;
+  border-color: #fca130;
+  width: 100%;
+}
+
+.delete-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: #fae7e7;
+  border-color: #f93e3e;
+  width: 100%;
+}
+
+.get-by-email-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+  width: 100%;
+}
