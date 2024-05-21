@@ -1,24 +1,11 @@
 import arrowIcon from "./../../icon-arrow-up.svg";
-import { fetchResponse, MethodType } from "../../fetchRequest";
+import { fetchResponse } from "../../fetchRequest";
 import "./requestBlock.css";
 import { ParameterInputBlock } from "./ParameterInputBlock/parameterInputBlock";
 import { bodyInputBlock } from "./BodyInputBlock/bodyInputBlock";
 import { ResponseBlock } from "./ResponseBlock/responseBlock";
+import { RequestLogicProps, RequestProps } from "../../requestConsts";
 
-export type RequestProps = {
-  method: MethodType;
-  path: string;
-  backgroundColor: string;
-  buttonColor: string;
-  inputParameterTemplate?: string;
-  inputBodyTemplate?: string;
-}
-
-export type RequestLogicProps = {
-  method: MethodType;
-  path: string;
-  cssClass: string;
-}
 
 export const RequestBlock = ({ method, path, backgroundColor, buttonColor, inputParameterTemplate, inputBodyTemplate }: RequestProps, cssClass: string) => {
   return `
