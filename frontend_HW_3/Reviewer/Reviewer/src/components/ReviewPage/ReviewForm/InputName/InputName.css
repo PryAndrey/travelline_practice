@@ -1,0 +1,41 @@
+.inputNameBlock {
+  width: calc(100% - 20px - 4px);
+  position: relative;
+  padding: 20px 0;
+}
+
+.inputName_name {
+  content: "*Имя";
+  pointer-events: none;
+  min-width: 40px;
+  /* width: 5%; */
+  height: 25%;
+  color: #909090;
+  display: block;
+  position: absolute;
+  top: 15%;
+  left: 5px;
+  font-size: 80%;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.inputName_name-selected {
+  color: #000000;
+}
+
+.inputName_input {
+  width: 100%;
+  border: 2px solid #DCDCDC;
+  position: relative;
+  border-radius: 5px;
+  height: 30px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0 10px;
+}
+
+.inputName_input::placeholder {
+  color: #909090;
+}

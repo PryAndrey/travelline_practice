@@ -1,0 +1,23 @@
+.inputCommentBlock {
+  width: calc(100% - 20px - 4px);
+  position: relative;
+  /* padding: 20px 0; */
+}
+
+.inputComment_input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 2px solid #DCDCDC;
+  position: relative;
+  border-radius: 5px;
+  /* min-height: 80px; */
+  height: auto;
+  background: transparent;
+  padding: 10px 10px;
+  resize: none;
+}
+
+.inputComment_input::placeholder {
+  color: #909090;
+}

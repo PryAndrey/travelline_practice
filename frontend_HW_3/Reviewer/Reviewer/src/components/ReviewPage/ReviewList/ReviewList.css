@@ -1,0 +1,6 @@
+.reviewList {
+  margin: 2em 0;
+  position: relative;
+  width: calc(32.5em);
+  left: -1em;
+}

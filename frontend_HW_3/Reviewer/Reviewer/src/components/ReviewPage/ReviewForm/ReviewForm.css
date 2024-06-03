@@ -1,0 +1,29 @@
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0 0 0;
+}
+
+.rateBarsBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15em;
+}
+
+.formButton {
+  appearance: none;
+  color: #ffffff;
+  background-color: #C0C0C0;
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+  width: 136px;
+  height: 32px;
+  padding: 0;
+  margin: 0 0 0 auto;
+}
+
+.formButton_ready {
+  background-color: #1E65B7;
+}

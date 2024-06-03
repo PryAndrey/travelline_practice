@@ -1,0 +1,32 @@
+.reviewBlock {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.reviewBlock_textInfo {
+  margin-left: 1em;
+  width: 90%;
+}
+
+.reviewBlock_textInfo>h3 {
+  margin: 7px 0;
+  text-wrap: nowrap;
+}
+
+.reviewBlock_textInfo>p {
+  margin: 0;
+  font-size: 14px;
+  width: 90%;
+}
+
+.reviewBlock_ava {
+  width: 40px;
+  height: 40px;
+  background-color: #DCDCDC;
+  border-radius: 10em;
+}
+
+.reviewBlock_averageRate {
+  margin: 0;
+}
