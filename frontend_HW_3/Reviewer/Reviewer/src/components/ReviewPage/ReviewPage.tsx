@@ -1,25 +1,37 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react'
+import './ReviewPage.css'
 import ReviewList from './ReviewList/ReviewList';
 import ReviewForm from './ReviewForm/ReviewForm';
-
+import { ReviewType } from '../../ReviewType';
 
 const ReviewPage = (): JSX.Element => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState<ReviewType[]>([]);
 
-  // const handleAddReview = () => {
-  //   setReviews((revs) => [...revs, newReview]);
-  // };
+  useEffect(() => {
+    const storedData = localStorage.getItem('review-data');
+    if (storedData) {
+      const data = JSON.parse(storedData);
+      setReviews([...data.reviews]);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('review-data', JSON.stringify({ reviews }));
+  }, [reviews]);
+
+  const handleNewReview = (value: ReviewType) => {
+    setReviews([
+      ...reviews, value
+    ]);
+  };
 
   return (
     <>
-      <div>
+      <div className='reviewPageBlock_form'>
         <h2>Помогите нам сделать процесс бронирования лучше</h2>
-        <ReviewForm />
+        <ReviewForm setReviews={handleNewReview} />
       </div >
-      <div>
-        <ReviewList reviews={reviews} />
-      </div>
+      <ReviewList reviews={reviews} />
     </>
   )
 }

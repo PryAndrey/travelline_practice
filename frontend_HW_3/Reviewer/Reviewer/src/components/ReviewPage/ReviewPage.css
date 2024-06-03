@@ -1,0 +1,13 @@
+.reviewPageBlock_form {
+  border: 2px solid #DCDCDC;
+  border-radius: 2em;
+  padding: 30px 50px;
+  position: relative;
+  max-width: 24em;
+}
+
+.reviewPageBlock_form>h2 {
+  margin: 0;
+}
+
+.reviewPageBlock_reviewList {}

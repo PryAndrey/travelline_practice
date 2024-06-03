@@ -1,5 +1,6 @@
-import './App.css'
-import Review, { ReviewType } from './Review/Review';
+import { ReviewType } from '../../../ReviewType';
+import Review from './Review/Review';
+import './ReviewList.css'
 
 type ReviewListProps = {
   reviews: ReviewType[];
@@ -9,9 +10,11 @@ const ReviewList = ({ reviews }: ReviewListProps): JSX.Element => {
 
   return (
     <>
-      {reviews.map((r, i) => (
-        <Review review={r} key={i}/>
-      ))}
+      <div className="reviewList">
+        {reviews.map((r, i) => (
+          <Review review={r} key={i} />
+        ))}
+      </div>
     </>
   )
 }

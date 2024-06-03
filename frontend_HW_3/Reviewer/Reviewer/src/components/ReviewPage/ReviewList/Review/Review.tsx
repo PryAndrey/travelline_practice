@@ -1,25 +1,23 @@
-import './App.css'
-
-export type ReviewType = {
-  averageRate: number,
-  name: string,
-  comment: string,
-};
+import { ReviewType } from '../../../../ReviewType';
+import defaultAva from "./../../../../assets/avatar-svgrepo-com.svg"
+import "./Review.css"
 
 type ReviewProps = {
   review: ReviewType;
-  key: number;
 };
 
-const Review = ({ review, key }: ReviewProps): JSX.Element => {
+const Review = ({ review }: ReviewProps): JSX.Element => {
 
   return (
     <>
-      {key}
-    ava
-      {review.averageRate}
-      {review.name}
-      {review.comment}
+      <div className="reviewBlock">
+        <img className="reviewBlock_ava" src={defaultAva} alt="ava" />
+        <div className="reviewBlock_textInfo">
+          <h3>{review.name}</h3>
+          <p>{review.comment}</p>
+        </div>
+        <h2 className="reviewBlock_averageRate">{review.averageRate}/5</h2>
+      </div>
     </>
   )
 }

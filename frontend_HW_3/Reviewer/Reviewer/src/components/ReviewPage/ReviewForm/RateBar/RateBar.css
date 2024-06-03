@@ -1,0 +1,320 @@
+.rateBar[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  margin: 0;
+
+}
+
+/* border */
+.rateBar[type="range"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 97%;
+  height: 2px;
+  top: 5px;
+  left: 2%;
+  background-color: #DCDCDC;
+  z-index: -1;
+}
+
+.rateBar[type="range"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 97%;
+  height: 2px;
+  top: 14px;
+  left: 2%;
+  background-color: #DCDCDC;
+  z-index: -1;
+}
+
+.rateBar[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #DCDCDC;
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 2%,
+      #ffffff 3%,
+      #ffffff 97%,
+      #ffffff00 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"]::-webkit-slider-thumb {
+  visibility: hidden;
+}
+
+.rateBar[type="range"]:focus {
+  outline: none;
+}
+
+.inputRangeBlock {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.inputRangeBlock>h3 {
+  margin: 0 0 0 20px;
+  display: flex;
+  justify-content: start;
+  color: #404040;
+  text-align: start;
+  max-width: 150px;
+}
+
+.inputRange {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-width: calc(100% - 170px);
+  width: calc(100% - 170px);
+  height: fit-content;
+}
+
+#tickmarks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  width: calc(100% - 13px);
+  pointer-events: none;
+
+}
+
+#tickmarks option {
+  position: relative;
+}
+
+.emptyPoints option::after {
+  content: "";
+  position: absolute;
+  transform: translate(-30%, 20%);
+  background-color: #FFFFFF;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #DCDCDC;
+  border-radius: 25px;
+}
+
+.initPoints option::after {
+  content: "";
+  position: absolute;
+  transform: translate(-30%, 20%);
+  background-color: #FFFFFF;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #DCDCDC;
+  border-radius: 25px;
+}
+
+.initPoints option[value="1"]::after {
+  background-color: #df1e1e;
+}
+
+.initPoints option[value="2"]::after {
+  background-color: #FF8311;
+}
+
+.initPoints option[value="3"]::after {
+  background-color: #FF8311;
+}
+
+.initPoints option[value="4"]::after {
+  background-color: #FFC700;
+}
+
+.initPoints option[value="5"]::after {
+  background-color: #FFC700;
+}
+
+/* angryFace */
+.rateBar[type="range"].angryFace::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 1%,
+      #F24E1E 2%,
+      #ffffff 4%,
+      #ffffff 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"].angryFace::before,
+.rateBar[type="range"].angryFace::after {
+  background: linear-gradient(90deg,
+      #F24E1E 0%,
+      #DCDCDC 2%,
+      #DCDCDC 100%);
+}
+
+.angryFace option[value="1"]::after {
+  background: url("./../../../../assets/twemoji_angry-face.svg") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  border: 0;
+}
+
+/* slightlyFrowningFace */
+.rateBar[type="range"].slightlyFrowningFace::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 2%,
+      #FF8311 3%,
+      #FF8311 24%,
+      #ffffff 25%,
+      #ffffff 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"].slightlyFrowningFace::before,
+.rateBar[type="range"].slightlyFrowningFace::after {
+  background: linear-gradient(90deg,
+      #FF8311 0%,
+      #FF8311 24%,
+      #DCDCDC 25%,
+      #DCDCDC 100%);
+}
+
+.slightlyFrowningFace option[value="1"]::after {
+  background-color: #FF8311;
+}
+
+.slightlyFrowningFace option[value="2"]::after {
+  background: url("./../../../../assets/twemoji_slightly-frowning-face.svg") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  border: 0;
+}
+
+/* neutralFace */
+.rateBar[type="range"].neutralFace::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 2%,
+      #FF8311 3%,
+      #FF8311 49%,
+      #ffffff 50%,
+      #ffffff 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"].neutralFace::before,
+.rateBar[type="range"].neutralFace::after {
+  background: linear-gradient(90deg,
+      #FF8311 0%,
+      #FF8311 49%,
+      #DCDCDC 50%,
+      #DCDCDC 100%);
+}
+
+.neutralFace option[value="1"]::after {
+  background-color: #FF8311;
+}
+
+.neutralFace option[value="2"]::after {
+  background-color: #FF8311;
+}
+
+.neutralFace option[value="3"]::after {
+  background: url("./../../../../assets/twemoji_neutral-face.svg") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  border: 0;
+}
+
+/* slightlySmilingFace */
+.rateBar[type="range"].slightlySmilingFace::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 2%,
+      #FFC700 3%,
+      #FFC700 75%,
+      #ffffff 50%,
+      #ffffff 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"].slightlySmilingFace::before,
+.rateBar[type="range"].slightlySmilingFace::after {
+  background: linear-gradient(90deg,
+      #FFC700 0%,
+      #FFC700 74%,
+      #DCDCDC 75%,
+      #DCDCDC 100%);
+}
+
+.slightlySmilingFace option[value="1"]::after {
+  background-color: #FFC700;
+}
+
+.slightlySmilingFace option[value="2"]::after {
+  background-color: #FFC700;
+}
+
+.slightlySmilingFace option[value="3"]::after {
+  background-color: #FFC700;
+}
+
+.slightlySmilingFace option[value="4"]::after {
+  background: url("./../../../../assets/twemoji_slightly-smiling-face.svg") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  border: 0;
+}
+
+/* grinningFace */
+.rateBar[type="range"].grinningFace::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg,
+      #ffffff00 0%,
+      #ffffff00 2%,
+      #FFC700 3%,
+      #FFC700 98%,
+      #ffffff00 100%);
+}
+
+.rateBar[type="range"].grinningFace::before,
+.rateBar[type="range"].grinningFace::after {
+  background: linear-gradient(90deg,
+      #FFC700 0%,
+      #FFC700 100%);
+}
+
+.grinningFace option[value="1"]::after {
+  background-color: #FFC700;
+}
+
+.grinningFace option[value="2"]::after {
+  background-color: #FFC700;
+}
+
+.grinningFace option[value="3"]::after {
+  background-color: #FFC700;
+}
+
+.grinningFace option[value="4"]::after {
+  background-color: #FFC700;
+}
+
+.grinningFace option[value="5"]::after {
+  background: url("./../../../../assets/twemoji_grinning-face-with-big-eyes.svg") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  border: 0;
+}
